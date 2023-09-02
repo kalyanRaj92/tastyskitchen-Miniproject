@@ -11,6 +11,10 @@ class Login extends Component {
     errorMsg: '',
   }
 
+  componentDidMount() {
+    document.title = 'SwiggyClone-App'
+  }
+
   onChangeUsername = event => {
     this.setState({username: event.target.value})
   }
@@ -63,6 +67,7 @@ class Login extends Component {
           type="text"
           id="username"
           onChange={this.onChangeUsername}
+          placeholder="rahul"
         />
       </>
     )
@@ -81,6 +86,7 @@ class Login extends Component {
           type="password"
           id="password"
           onChange={this.onChangePassword}
+          placeholder="rahul@2021"
         />
         {showSubmitError && <p className="error-message">{errorMsg}</p>}
       </>
@@ -96,7 +102,7 @@ class Login extends Component {
       <div className="login-bg-container">
         <form className="form-container" onSubmit={this.onSubmitForm}>
           <img
-            src="https://res.cloudinary.com/dfzzwbmcq/image/upload/v1636621477/Rectangle_1457_1_rrwlss.png"
+            src="https://res.cloudinary.com/duqi6qdia/image/upload/v1678777851/Rectangle_1456_2x_qatcez.png"
             alt="website login"
             className="login-website-logo"
           />
@@ -118,7 +124,7 @@ class Login extends Component {
           </div>
         </form>
         <img
-          src="https://res.cloudinary.com/dfzzwbmcq/image/upload/v1635943732/Rectangle_1456_c5aarj.png"
+          src="https://res.cloudinary.com/duqi6qdia/image/upload/v1678777851/Rectangle_1456_2x_qatcez.png"
           alt="website login"
           className="login-lg-website-logo"
         />
