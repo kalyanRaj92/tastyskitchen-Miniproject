@@ -57,7 +57,7 @@
   border-radius: 2px;
   border: none;
   outline: none;
-  cursor: pointer;
+/*   cursor: pointer; */
   padding-left: 10px;
 }
 .checkbox-container {
