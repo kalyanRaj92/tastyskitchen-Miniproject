@@ -3,8 +3,9 @@ import {Link, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {AiFillCloseCircle} from 'react-icons/ai'
-import CartContext from '../../context/CartContext'
 import './index.css'
+
+import CartContext from '../../context/CartContext'
 
 class Header extends Component {
   state = {
@@ -22,13 +23,13 @@ class Header extends Component {
     Cookies.remove('jwt_token')
     history.replace('/login')
   }
-  
-  const renderCartItemsCount = () => (
+
+  renderCartItemsCount = () => (
     <CartContext.Consumer>
       {value => {
         const {cartList} = value
         const cartItemsCount = cartList.length
-
+        console.log(cartItemsCount)
         return (
           <>
             {cartItemsCount > 0 ? (
@@ -75,10 +76,7 @@ class Header extends Component {
               <li>Profile</li>
             </Link>
             <Link to="/cart" className={`nav-link ${activeCart}`}>
-              <li>
-                Cart
-                {renderCartItemsCount()}
-              </li>
+              <li>Cart {this.renderCartItemsCount()}</li>
             </Link>
           </ul>
           <button
@@ -100,10 +98,7 @@ class Header extends Component {
                 <li>Profile</li>
               </Link>
               <Link to="/cart" className={`nav-link ${activeCart}`}>
-                <li>
-                  Cart
-                  {renderCartItemsCount()}
-                </li>
+                <li>Cart {this.renderCartItemsCount()}</li>
               </Link>
             </ul>
             <button
